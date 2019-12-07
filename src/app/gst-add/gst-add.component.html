@@ -1,0 +1,92 @@
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Player Name</label>
+          <input type="text" class="form-control" formControlName="person_name" #person_name />
+        </div>
+        <div *ngIf="angForm.controls['person_name'].invalid && (angForm.controls['person_name'].dirty || angForm.controls['person_name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['person_name'].errors.required">
+            Player name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Rank</label>
+          <select name="singleSelect" ng-model="data.singleSelect"  class="form-control" formControlName="business_name" #business_name>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select><br>
+
+        </div>
+        <div *ngIf="angForm.controls['business_name'].invalid && (angForm.controls['business_name'].dirty || angForm.controls['business_name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['business_name'].errors.required">
+            Rank is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Score</label>
+          <input type="text" class="form-control" formControlName="business_gst_number" #business_gst_number />
+        </div>
+        <div *ngIf="angForm.controls['business_gst_number'].invalid && (angForm.controls['business_gst_number'].dirty || angForm.controls['business_gst_number'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['business_gst_number'].errors.required">
+            Score is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4">Time</label>
+          <input type="text" class="form-control" formControlName="player_time" #player_time />
+        </div>
+        <div *ngIf="angForm.controls['player_time'].invalid && (angForm.controls['player_time'].dirty || angForm.controls['player_time'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['player_time'].errors.required">
+           Time is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="singleSelect" class="col-md-4">Game</label>
+          <select name="singleSelect" ng-model="data.singleSelect"  class="form-control" formControlName="player_game" #player_game >
+              <option value="Over Watch">Over Watch</option>
+              <option value="Call of Duty">Call of Duty</option>
+              <option value="The Sims">The Sims</option>
+              <option value="League of Legends">League Of Legends</option>
+            </select><br>
+        </div>
+        <div *ngIf="angForm.controls['player_game'].invalid && (angForm.controls['player_game'].dirty || angForm.controls['player_game'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['player_game'].errors.required">
+            Game is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="singleSelect" class="col-md-4">Status</label>
+            <select name="singleSelect" ng-model="data.singleSelect"  class="form-control" formControlName="player_ava" #player_ava >
+                <option value="Available">Available</option>
+                <option value="Unavailable">Unavailable</option>
+
+              </select><br>
+          </div>
+          <div *ngIf="angForm.controls['player_ava'].invalid && (angForm.controls['player_ava'].dirty || angForm.controls['player_ava'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['player_ava'].errors.required">
+              Status required.
+            </div>
+          </div>
+
+        <div class="form-group">
+          <button (click)="addBusiness(person_name.value, business_name.value, business_gst_number.value, player_time.value, player_game.value,player_ava.value)"
+              [disabled]="angForm.pristine || angForm.invalid" 
+              class="btn btn-primary" routerLink="/business"  routerLinkActive="active"> 
+              Add Player
+           </button>
+      </div>
+      </form>
+    </div>
+  </div>

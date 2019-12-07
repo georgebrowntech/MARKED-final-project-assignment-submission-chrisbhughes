@@ -1,0 +1,33 @@
+<div>
+<div class="subhead">Players</div>
+<div class="subhead">Games</div>
+</div>
+<input name="q" class ="searcher sinput" type="text" placeholder="Doesnt work, so don't even try…" value="" autocomplete="off" maxlength="240" >
+<a routerLink="create" class="btn btn-primary searcher" routerLinkActive="active">Add New Player</a>
+<br>
+<table class="table table-hover">
+    <thead>
+    <tr class="headers">
+        <td>Player</td>
+        <td>Rank</td>
+        <td>Score</td>
+        <td>Time</td>
+        <td>Games Played</td>
+        <td>Status</td>
+        <td colspan="2"></td>
+    </tr>
+    </thead>
+  
+    <tbody>
+        <tr *ngFor="let business of businesses" class="tds">
+            <td>{{ business.person_name }}</td>
+            <td>{{ business.business_name }}</td>
+            <td>{{ business.business_gst_number }}</td>
+            <td>{{ business.player_time }}</td>
+            <td>{{ business.player_game }}</td>
+            <td>{{business.player_ava}}</td>
+            <td><a [routerLink]="['/business/edit', business._id]" class="btn btn-primary">Update</a></td>
+            <td><a (click) = "deleteBusiness(business._id)" class="btn btn-danger" routerLink="business"  routerLinkActive="active">Delete</a></td>
+        </tr>
+    </tbody>
+  </table>
