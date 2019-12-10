@@ -277,7 +277,10 @@
     z-index: -10;
     width: 1920px;
   }
-
+.admin{
+  right: 20px;
+  position: absolute;
+}
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -324,6 +327,11 @@
       <li class="nav-item">
         <a routerLink="business" class="nav-link" routerLinkActive="active">
          Lobby
+        </a>
+      </li> 
+      <li class="nav-item">
+        <a routerLink="business/login" class="nav-link admin" routerLinkActive="active">
+         Admin Login 
         </a>
       </li> 
     </ul>

@@ -8,7 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BusinessService {
 
-  uri = 'http://localhost:4000/business';
+
+  uri = 'https://ac-backend-prod.herokuapp.com/api';
+
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +32,11 @@ export class BusinessService {
            .http
            .get(`${this.uri}`);
   }
+  getLobby() {
+    return this
+           .http
+           .get(`${this.uri}`);
+  }
   deleteBusiness(id) {
     return this
               .http
@@ -39,7 +46,13 @@ export class BusinessService {
     return this
             .http
             .get(`${this.uri}/edit/${id}`);
-    }
+  }
+  joinBusiness(id) {
+    return this
+            .http
+            .get(`${this.uri}/joingame/${id}`);
+  }
+  
     updateBusiness(person_name, business_name, business_gst_number,player_time, player_game, id) {
 
       const obj = {

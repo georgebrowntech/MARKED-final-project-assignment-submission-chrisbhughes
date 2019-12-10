@@ -9,12 +9,18 @@ import { GstEditComponent } from './gst-edit/gst-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BusinessService } from './business.service';
+import { JoinGameComponent } from './join-game/join-game.component';
+import { LoginComponent } from './login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     GstAddComponent,
     GstGetComponent,
-    GstEditComponent
+    GstEditComponent,
+    JoinGameComponent,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
