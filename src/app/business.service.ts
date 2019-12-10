@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class BusinessService {
 
 
-  uri = 'https://ac-backend-prod.herokuapp.com/models/business';
+  uri = 'https://ac-backend-prod.herokuapp.com/business';
 
 
   constructor(private http: HttpClient) { }
