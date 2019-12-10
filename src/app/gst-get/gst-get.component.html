@@ -30,7 +30,7 @@
             <td>{{ business.player_game }}</td>
             <td>{{business.player_ava}}</td>
             <td><a [routerLink]="['/business/edit', business._id]" class="btn btn-primary">Update</a></td>
-            <td><a [routerLink]="['/business/joingame', business._id]" class="btn btn-primary">Update</a></td>
+            <td><a [routerLink]="['/business/joingame', business._id]" class="btn btn-primary">Join Game</a></td>
             <td><a (click) = "deleteBusiness(business._id)" class="btn btn-danger" routerLink="business"  routerLinkActive="active">Delete</a></td>
         </tr>
     </tbody>
